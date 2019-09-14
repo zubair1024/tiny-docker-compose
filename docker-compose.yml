@@ -3,6 +3,7 @@ services:
   redis-server:
     image: redis
   multitiny:
+    restart: always
     build: .
     ports:
       - "3000:3001"
