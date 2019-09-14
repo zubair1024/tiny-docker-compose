@@ -3,7 +3,9 @@ const redis = require("redis");
 
 const app = express();
 
-redis.createClient();
+const client = redis.createClient();
+
+client.set("visits", 0);
 
 app.get("/", (req, res) => {
   client.get("visits", (err, visits) => {
